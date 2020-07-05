@@ -27,7 +27,7 @@ player_to_words = {"player1": ["BLUE", "TENNIS", "EXIT"], "wordNerd":["EARTH","E
 #that's a dictionary of a player and the list words they make
 
 
-def update_point_totals(words_and_players): #
+def update_point_totals(words_and_players): #running dictionary of the players with their points so far
   player_to_points = {}
   for player, words in words_and_players.items():
     player_points = 0
@@ -39,8 +39,8 @@ def update_point_totals(words_and_players): #
 
 print(update_point_totals(player_to_words))
 
-words_used = {}
-def play_word(player, word):
+words_used = {} 
+def play_word(player, word): #makes a running dictionary of a player and the list of words they've already used
   if player not in words_used:
     words_used.update({player:[word]})
   elif word not in words_used[player]:
@@ -50,6 +50,7 @@ def play_word(player, word):
     print("You already used that!")
   return words_used
 
+#test runs
 print(play_word("Ciri", "CRY"))
 print(play_word("Ciri", "DEED"))
 print(play_word("Flo", "CONE"))
